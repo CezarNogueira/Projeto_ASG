@@ -3,7 +3,7 @@ import './header_module.css';
 import { RxHamburgerMenu } from "react-icons/rx";
 
 function Header () {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(true);
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -15,7 +15,7 @@ function Header () {
     return (
         <header className='header'>
             <div className="header_logo_container">
-                <h2 className='header_logo'>ASG</h2>
+                <h2 className='header_logo'>Alto Santo da Glória</h2>
                 <RxHamburgerMenu size={24} onClick= {() => {
                     setMenuOpen(!menuOpen);
                 }}/>

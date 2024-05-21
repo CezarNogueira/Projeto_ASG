@@ -1,0 +1,174 @@
+.cadastro_container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+}
+
+.cadastro_wrapper {
+    width: 80%;
+    max-width: 840px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: 5px 5px 10px #303030;
+}
+
+.form {
+    width: 100%;
+    max-width: 840px;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 3rem;
+}
+
+.form-header {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 0.5rem;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.input-box input {
+    width: 75%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    transition: all 0.4s;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid #303030;
+}
+
+.input-box label {
+    width: 70%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.gender-inputs,
+.civil-inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.gender-group,
+.civil-group {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.gender-input,
+.civil-input {
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input,
+.civil-input input {
+    margin-right: 0.35rem;
+}
+
+.gender-input label,
+.civil-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.confirm-button {
+    margin-top: 3rem;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-button button {
+    border: none;
+    background-color: #adff2f;
+    padding: 5% 15%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.confirm-button button:hover {
+    background-color: #8acf23;
+    color: #303030;
+}
+
+@media screen and (max-width: 1330px) {
+    .cadastro-wrapper {
+        width: 50%;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .cadastro-wrapper {
+        width: 90%;
+        height: auto;
+    }
+
+    .input-group {
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 25rem;
+        padding-right: 5rem;
+    }
+
+    .gender-group,
+    .civil-group {
+        flex-direction: column;
+    }
+
+    .gender-input,
+    .civil-input {
+        gap: 0.5rem;
+    }
+}
