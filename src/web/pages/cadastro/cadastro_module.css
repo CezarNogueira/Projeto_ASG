@@ -70,9 +70,19 @@
 
 .input-box label {
     width: 70%;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #000000c0;
+}
+
+.gender-title,
+.civil-title {
+    width: 70%;
+}
+
+.gender-title h6,
+.civil-title h6 {
+    font-size: 0.9rem;
 }
 
 .gender-inputs,

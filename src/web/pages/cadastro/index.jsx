@@ -1,36 +1,77 @@
+import React, { useState } from 'react';
 import './cadastro_module.css';
 
 function Cadastro () {
+
+    const [formDados, setFormDados] = useState({
+        nome_morador: '',
+        idade_morador: '',
+        cpf_morador: '',
+        datanascimento_morador: '',
+        genero_morador: '',
+        estadocivil_morador: '',
+        telefone_morador: '',
+        cep_morador: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormDados(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            console.log("Dados a serem enviados:", formDados);
+            const response = await fetch('http://localhost:3000/cadastrar/morador', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(formDados)
+            });
+
+            const json = await response.json();
+            console.log(response);
+            console.log(json);
+        } catch (err) {
+            console.error('Erro ao enviar', err)
+        }
+    }
+
     return (
     <div className="cadastro_container">
         <div className="cadastro_wrapper">
             <div className="form"> 
-                <form action="#">
+                <form onSubmit={handleSubmit}>
                     <div className="form-header">
                         <div className="title">
-                            <h1>Cadastro</h1>
+                            <h1>CADASTRO</h1>
                         </div>
                     </div>
 
                     <div className="input-group">
                         <div className="input-box">
                             <label htmlFor="nome_morador">Nome</label>
-                            <input id="nome_morador" type="text" name="nome_morador" required/>
+                            <input type="text" name="nome_morador" value={formDados.nome_morador} onChange={ handleChange } required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="idade_morador">Idade</label>
-                            <input id="idade_morador" type="text" name="idade_morador" required/>
+                            <input type="text" name="idade_morador" value={formDados.idade_morador} onChange={ handleChange } required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="cpf_morador">CPF</label>
-                            <input id="cpf_morador" type="text" name="cpf_morador" required/>
+                            <input type="text" name="cpf_morador" value={formDados.cpf_morador} onChange={ handleChange } required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="datanascimento_morador">Data de Nascimento</label>
-                            <input id="datanascimento_morador" type="text" name="datanascimento_morador" required/>
+                            <input type="text" name="datanascimento_morador" value={formDados.datanascimento_morador} onChange={ handleChange } required/>
                         </div>
 
                         <div className="gender-inputs">
@@ -40,17 +81,17 @@ function Cadastro () {
 
                             <div className="gender-group">
                                 <div className="gender-input">
-                                    <input id="masculino" type="radio" name="genero_morador"/>
+                                    <input type="radio" name="genero_morador" value={formDados.genero_morador} onChange={ handleChange }/>
                                     <label htmlFor="masculino">Masculino</label>
                                 </div>
 
                                 <div className="gender-input">
-                                    <input id="feminino" type="radio" name="genero_morador"/>
+                                    <input type="radio" name="genero_morador" value={formDados.genero_morador} onChange={ handleChange } />
                                     <label htmlFor="feminino">Feminino</label>
                                 </div>
 
                                 <div className="gender-input">
-                                    <input id="outro" type="radio" name="genero_morador"/>
+                                    <input type="radio" name="genero_morador" value={formDados.genero_morador} onChange={ handleChange }/>
                                     <label htmlFor="outro">Outro</label>
                                 </div>
                             </div>
@@ -63,17 +104,17 @@ function Cadastro () {
 
                             <div className="civil-group">
                                 <div className="civil-input">
-                                    <input id="solteiro" type="radio" name="estadocivil_morador"/>
+                                    <input type="radio" name="estadocivil_morador" value={formDados.estadocivil_morador} onChange={ handleChange }/>
                                     <label htmlFor="solteiro">Solteiro</label>
                                 </div>
 
                                 <div className="civil-input">
-                                    <input id="casado" type="radio" name="estadocivil_morador"/>
+                                    <input type="radio" name="estadocivil_morador" value={formDados.estadocivil_morador} onChange={ handleChange }/>
                                     <label htmlFor="casado">Casado</label>
                                 </div>
 
                                 <div className="civil-input">
-                                    <input id="outro" type="radio" name="estadocivil_morador"/>
+                                    <input type="radio" name="estadocivil_morador" value={formDados.estadocivil_morador} onChange={ handleChange }/>
                                     <label htmlFor="outro">Outro</label>
                                 </div>
                             </div>
@@ -81,17 +122,17 @@ function Cadastro () {
 
                         <div className="input-box">
                             <label htmlFor="telefone_morador">Telefone/Celular</label>
-                            <input id="telefone_morador" type="tel" name="telefone_morador" placeholder="(xx) xxxxx-xxxx" required/>
+                            <input type="tel" name="telefone_morador" placeholder="(xx) xxxxx-xxxx" onChange={ handleChange } required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="cep_morador">CEP</label>
-                            <input id="cep_morador" type="text" name="cep_morador" required/>
+                            <input type="text" name="cep_morador" value={formDados.cep_morador} onChange={ handleChange } required/>
                         </div>
                     </div>
 
                     <div className='confirm-button'>
-                        <button>Confirmar</button>
+                        <button type='submit'>Confirmar</button>
                     </div>
                 </form>
             </div>

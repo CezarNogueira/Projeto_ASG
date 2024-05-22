@@ -4,7 +4,7 @@ const connection = createConnection({
     host: "localhost",
     user: "root",
     password: "root",
-    database: "asgBD"
+    database: "asgbd"
 });
 
 connection.connect((err) => {

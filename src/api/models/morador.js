@@ -1,4 +1,4 @@
-import connection from "../config/db";
+import connection from "../config/db.js";
 
 
     //Metodo responsavel por realizar a leitura
@@ -18,5 +18,3 @@ import connection from "../config/db";
         //setar como inativo
         connection.query("UPDATE morador SET ativo_morador = 0 WHERE id = ?", [ id ], callback);
     }
-
-export default Morador;
