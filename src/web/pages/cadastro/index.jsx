@@ -24,7 +24,7 @@ function Cadastro() {
     };
 
     const handleSubmit = async (e) => {
-        
+
         try {
             console.log("Dados a serem enviados:", formDados);
             const response = await fetch('http://localhost:3000/morador', {
@@ -63,22 +63,22 @@ function Cadastro() {
                     <div className="input-group">
                         <div className="input-box">
                             <label htmlFor="nome_morador">Nome</label>
-                            <input type="text" name="nome_morador" value={formDados.nome_morador} onChange={handleChange} required/>
+                            <input type="text" name="nome_morador" value={formDados.nome_morador} onChange={handleChange} maxLength='200' required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="idade_morador">Idade</label>
-                            <input type="text" name="idade_morador" value={formDados.idade_morador} onChange={handleChange} required/>
+                            <input type="text" name="idade_morador" value={formDados.idade_morador} onChange={handleChange} maxLength='3' required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="cpf_morador">CPF</label>
-                            <input type="text" name="cpf_morador" value={formDados.cpf_morador} onChange={handleChange} required/>
+                            <input type="text" name="cpf_morador" value={formDados.cpf_morador} onChange={handleChange} maxLength='14' required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="datanascimento_morador">Data de Nascimento</label>
-                            <input type="text" name="datanascimento_morador" value={formDados.datanascimento_morador} onChange={handleChange} required/>
+                            <input type="text" name="datanascimento_morador" value={formDados.datanascimento_morador} onChange={handleChange} maxLength='10' required/>
                         </div>
 
                         <div className="gender-inputs">
@@ -129,12 +129,12 @@ function Cadastro() {
 
                         <div className="input-box">
                             <label htmlFor="telefone_morador">Telefone/Celular</label>
-                            <input type="tel" name="telefone_morador" placeholder="(xx) xxxxx-xxxx" onChange={handleChange} required/>
+                            <input type="tel" name="telefone_morador" placeholder="(xx) xxxxx-xxxx" onChange={handleChange} maxLength='14' pattern='[09]{2}-[0-9]{5}-[0-9]{4}' required/>
                         </div>
 
                         <div className="input-box">
                             <label htmlFor="cep_morador">CEP</label>
-                            <input type="text" name="cep_morador" value={formDados.cep_morador} onChange={handleChange} required/>
+                            <input type="text" name="cep_morador" value={formDados.cep_morador} onChange={handleChange} pattern='[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}' required/>
                         </div>
                     </div>
 

@@ -40,7 +40,7 @@ function Deletar() {
                 <form className='form' onSubmit={handleSubmit}>
                     <div className='input-box'>
                         <label htmlFor="id">ID</label>
-                        <input type='text' name='id' value={formDados.id} onChange={handleChange}/>
+                        <input type='text' name='id' value={formDados.id} onChange={handleChange} maxLength='10'/>
                     </div>
                     <div className='deletar-button'>
                             <button type='submit' onClick={handleSubmit}>Deletar</button>
