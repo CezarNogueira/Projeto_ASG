@@ -19,11 +19,9 @@ function Atualizar() {
             ...prevState,
             [name]: value
         }));
-        e.preventDefault();
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
 
         try {
             console.log('Dados a serem enviados:', formDados.id);

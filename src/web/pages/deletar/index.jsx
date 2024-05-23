@@ -15,7 +15,6 @@ function Deletar() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
 
         try {
             console.log('Dados a serem Deletados', formDados.id);

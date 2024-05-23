@@ -24,7 +24,7 @@ function Cadastro() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        
         try {
             console.log("Dados a serem enviados:", formDados);
             const response = await fetch('http://localhost:3000/morador', {
