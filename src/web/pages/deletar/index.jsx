@@ -43,7 +43,7 @@ function Deletar() {
                         <label htmlFor="id">ID</label>
                         <input type='text' name='id' value={formDados.id} onChange={handleChange}/>
                     </div>
-                    <div className='confirm-button'>
+                    <div className='deletar-button'>
                             <button type='submit' onClick={handleSubmit}>Deletar</button>
                         </div>
                 </form>

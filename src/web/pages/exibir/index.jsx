@@ -17,6 +17,7 @@ function Exibir () {
             });
 
             const data = await response.json();
+            console.log(data)
             setConsultarDados(data);
         } catch (err) {
             console.log('Erro ao Buscar dados do Banco', err);
@@ -68,7 +69,7 @@ function Exibir () {
             <ol className='data-table'>
                 {consultarDados.map((linha, index) => (
                     <li key={index}>
-                        <span>ID: {linha.id_morador}</span>
+                        <span>ID: {linha.idmorador}</span>
                         <span>Nome: {linha.nome_morador}</span>
                         <span>Idade: {linha.idade_morador}</span>
                         <span>CPF: {linha.cpf_morador}</span>

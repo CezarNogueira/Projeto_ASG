@@ -133,12 +133,12 @@
 .confirm-button button {
     border: none;
     background-color: #adff2f;
-    padding: 5% 15%;
-    border-radius: 5px;
+    padding: 3% 10%;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.4s;
 
-    font-size: 0.93rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #000000c0;
 }

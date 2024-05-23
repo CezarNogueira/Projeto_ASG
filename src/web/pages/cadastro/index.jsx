@@ -3,7 +3,6 @@ import './cadastro_module.css';
 
 function Cadastro() {
     const [formDados, setFormDados] = useState({
-        id_morador: '',
         nome_morador: '',
         idade_morador: '',
         cpf_morador: '',

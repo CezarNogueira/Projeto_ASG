@@ -41,8 +41,7 @@ export async function updateMorador(req, res) {
 //Realizando Desativação (DELETE)
 export async function deleteMorador(req, res) {
     const { id } = req.params;
-    const novosDados = req.body;
-    deleteM(id, novosDados, (err, result) => {
+    deleteM(id, (err, result) => {
         if(err) {
             res.status(500).json({ error: err.message });
             return;
