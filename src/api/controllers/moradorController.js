@@ -2,8 +2,8 @@ import { create, read, update, deleteM } from "../models/morador.js";
 
 // Realizar INSERT (CREATE)
 export async function createMorador(req, res) {
-    //nome_morador, idade_morador, datanascimento_morador, genero_morador, estadocivil_morador, telefone_morador, cep_morador, cpf_morador
-    const { dados } = req.body;
+    //nome_morador, idade_morador, cpf_morador, datanascimento_morador, genero_morador, estadocivil_morador, telefone_morador, cep_morador
+    const dados = req.body;
 
     // Insersão de Dados
     create(dados, (err, result) => {
@@ -12,9 +12,9 @@ export async function createMorador(req, res) {
             res.status(500).send('Erro ao inserir dado no banco de dados');
             return;
         }
-        console.log('Dado inserido com sucesso:', results);
-        res.status(200).send('Dado inserido com sucesso');
-    });   
+        console.log('Dado inserido com sucesso:', result);
+        res.status(200).send(dados);
+    }); 
 }
 //Realizar Consulta(READ)
 export async function getAllMorador(req, res) {
