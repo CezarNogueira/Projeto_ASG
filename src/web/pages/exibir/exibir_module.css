@@ -1,0 +1,94 @@
+.exibir_container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    background-color: #202020;
+}
+
+.exibir_form {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.exibir_form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2% 8%;
+    font-size: 1rem;
+    background-color: #f4f4f4;
+    color: #000000c0;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.exibir_form button:hover {
+    opacity: 0.6;
+}
+
+
+.data-table {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+
+    box-shadow: 1px 1px 10px #0000001c;
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-table li {
+    background: #f9f9f9;
+    width: 32%;
+    max-width: 280px;
+    height: 40%;
+    min-height: 280px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-weight: 600;
+    gap: 0.5rem;
+
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 684px) {
+    .data-table {
+        width: 90%;
+        height: 90%;
+    }
+    .data-table li {
+        font-size: 0.9rem;
+        
+    }
+    .exibir_form button {
+        padding: 4% 16%;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-table li {
+        font-size: 0.6rem;
+    }
+    .exibir_form button {
+        padding: 4% 16%;
+    }
+}

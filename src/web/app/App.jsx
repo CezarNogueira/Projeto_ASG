@@ -3,6 +3,7 @@ import '../css/App.css';
 import Header from '../components/Header/header.jsx';
 import Cadastro from '../pages/cadastro/index.jsx';
 import Home from '../pages/home/index.jsx';
+import Exibir from '../pages/exibir/index.jsx';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
             case 'create':
                 return <Cadastro />;
             case 'read':
-                return <Cadastro />;
+                return <Exibir />;
             case 'update':
                 return <Cadastro />;
             case 'delete':
