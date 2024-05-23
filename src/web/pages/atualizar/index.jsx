@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './cadastro_module.css';
 
-function Cadastro() {
+function Atualizar() {
     const [formDados, setFormDados] = useState({
         id_morador: '',
         nome_morador: '',
@@ -14,54 +13,52 @@ function Cadastro() {
         cep_morador: ''
     });
 
-    const [mensagem, setMensagem] = useState('');
-
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value} = e.target;
         setFormDados(prevState => ({
             ...prevState,
             [name]: value
         }));
-    };
+        e.preventDefault();
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            console.log("Dados a serem enviados:", formDados);
-            const response = await fetch('http://localhost:3000/morador', {
-                method: 'POST',
+            console.log('Dados a serem enviados:', formDados.id);
+            const response = await fetch(`http://localhost:3000/morador/{formDados.id}`, {
+                method: 'UPDATE',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formDados)
             });
 
-            if (!response.ok) {
-                throw new Error(`Erro: ${response.status} - ${response.statusText}`);
-            }
-
             const json = await response.json();
             console.log(response);
             console.log(json);
-            setMensagem('Cadastro realizado com sucesso!');
         } catch (err) {
-            console.error('Erro ao enviar', err);
-            setMensagem('Erro ao enviar os dados. Por favor, tente novamente.');
+            console.log('Erro ao enviar', err)
         }
     };
 
     return (
-    <div className="cadastro_container">
+        <div className="cadastro_container">
         <div className="cadastro_wrapper">
             <div className="form"> 
                 <form onSubmit={handleSubmit}>
                     <div className="form-header">
                         <div className="title">
-                            <h1>CADASTRO</h1>
+                            <h1>ATUALIZAR</h1>
                         </div>
                     </div>
 
                     <div className="input-group">
+                        <div className='input-box'>
+                        <label htmlFor="id">ID</label>
+                        <input type='text' name='id' value={formDados.id} onChange={handleChange}/>
+                        </div>
                         <div className="input-box">
                             <label htmlFor="nome_morador">Nome</label>
                             <input type="text" name="nome_morador" value={formDados.nome_morador} onChange={handleChange} required/>
@@ -146,7 +143,7 @@ function Cadastro() {
             </div>
         </div>
     </div>
-    )
+    );
 }
 
-export default Cadastro
+export default Atualizar;

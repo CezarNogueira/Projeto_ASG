@@ -14,7 +14,7 @@ function Home ({ setCurrentPage }) {
                         <button onClick={() => setCurrentPage('create')}>Cadastrar</button>
                         <button onClick={() => setCurrentPage('read')}>Exibir</button>
                         <button onClick={() => setCurrentPage('update')}>Atualizar</button>
-                        <button onClick={() => setCurrentPage('delete')}>Inativar</button>
+                        <button onClick={() => setCurrentPage('delete')}>Deletar</button>
                     </div>
                 </div>
             </div>

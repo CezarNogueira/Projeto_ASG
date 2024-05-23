@@ -4,6 +4,8 @@ import Header from '../components/Header/header.jsx';
 import Cadastro from '../pages/cadastro/index.jsx';
 import Home from '../pages/home/index.jsx';
 import Exibir from '../pages/exibir/index.jsx';
+import Atualizar from '../pages/atualizar/index.jsx';
+import Deletar from '../pages/deletar/index.jsx';
 
 function App() {
 
@@ -18,9 +20,9 @@ function App() {
             case 'read':
                 return <Exibir />;
             case 'update':
-                return <Cadastro />;
+                return <Atualizar />;
             case 'delete':
-                return <Cadastro />;
+                return <Deletar />;
         default:
             return <Home setCurrentPage={setCurrentPage}/>;
         }

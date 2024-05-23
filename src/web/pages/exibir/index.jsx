@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './exibir_module.css'
 
 function Exibir () {
+
     const [consultarDados, setConsultarDados] = useState([]);
 
     const handleSubmit = async (e) => {
@@ -22,9 +23,44 @@ function Exibir () {
         }
     };
 
+    const [formDados, setFormDados] = useState({
+        id: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormDados(prevState => ({
+            ...prevState,
+            [name]: value
+        }))
+    };
+
+    const handleDelete = async (e) => {
+        e.preventDefault();
+
+        try {
+            console.log('Dados a serem Deletados', formDados.id);
+            const response = await fetch(`http://localhost:3000/morador/${formDados.id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formDados)
+            });
+
+            const json = await response.json();
+            console.log(response);
+            console.log(json);
+        } catch (err) {
+            console.error('Erro ao enviar', err)
+        }
+    };
+
     useEffect(() => {
         handleSubmit(); //Busca do BD para carregar o componente
     }, []); //enviar array vazio para garantir execução unica
+
+
 
     return (
         <div className='exibir_container'>

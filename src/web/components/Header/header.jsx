@@ -27,7 +27,7 @@ function Header ({ setCurrentPage }) {
                         <li><a onClick={() => setCurrentPage('create')}>Cadastrar</a></li>
                         <li><a onClick={() => setCurrentPage('read')}>Exibir</a></li>
                         <li><a onClick={() => setCurrentPage('update')}>Atualizar</a></li>
-                        <li><a onClick={() => setCurrentPage('delete')}>Inativar</a></li>
+                        <li><a onClick={() => setCurrentPage('delete')}>Deletar</a></li>
                     </ul>
                 </nav>
             )}

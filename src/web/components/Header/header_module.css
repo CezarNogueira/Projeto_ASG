@@ -75,8 +75,7 @@ header nav ul li a:hover{
     }
 
     header nav ul {
-        margin-top: 0.5rem;
-        flex-direction: column;
+        gap: 0.5rem;
         align-items: flex-end;
     }
 

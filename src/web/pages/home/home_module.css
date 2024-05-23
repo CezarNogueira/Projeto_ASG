@@ -75,3 +75,10 @@
     background-color: #f4f4f4;
     color: #000000c0;
 }
+
+@media (max-width: 684px) {
+    .actions_group {
+        height: 100%;
+        flex-direction: column;
+    }
+}
