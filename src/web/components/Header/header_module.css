@@ -44,6 +44,7 @@ header nav ul li a{
     color: #2B2B2D;
     font-weight: 400;
     font-size: 20px;
+    cursor: pointer;
 
     transition: opacity 0.4s;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './header_module.css';
 import { RxHamburgerMenu } from "react-icons/rx";
 
-function Header () {
+function Header ({ setCurrentPage }) {
     const [menuOpen, setMenuOpen] = useState(true);
 
     useEffect(() => {
@@ -23,9 +23,11 @@ function Header () {
             {menuOpen && (
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a onClick={() => setCurrentPage('home')}>Home</a></li>
+                        <li><a onClick={() => setCurrentPage('create')}>Cadastrar</a></li>
+                        <li><a onClick={() => setCurrentPage('read')}>Exibir</a></li>
+                        <li><a onClick={() => setCurrentPage('update')}>Atualizar</a></li>
+                        <li><a onClick={() => setCurrentPage('delete')}>Inativar</a></li>
                     </ul>
                 </nav>
             )}
