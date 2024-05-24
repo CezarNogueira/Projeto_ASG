@@ -24,6 +24,7 @@ function Cadastro() {
     };
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
 
         try {
             console.log("Dados a serem enviados:", formDados);
@@ -129,7 +130,7 @@ function Cadastro() {
 
                         <div className="input-box">
                             <label htmlFor="telefone_morador">Telefone/Celular</label>
-                            <input type="tel" name="telefone_morador" placeholder="(xx) xxxxx-xxxx" onChange={handleChange} maxLength='14' pattern='[09]{2}-[0-9]{5}-[0-9]{4}' required/>
+                            <input type="tel" name="telefone_morador" placeholder="xx-xxxxx-xxxx" onChange={handleChange} maxLength='14' pattern='[0-9]{2}-[0-9]{5}-[0-9]{4}' required/>
                         </div>
 
                         <div className="input-box">
