@@ -9,10 +9,6 @@ header {
     justify-content: space-between;
 }
 
-header svg {
-    display: none;
-}
-
 header .header_logo_container {
     display: flex;
     align-items: center;
@@ -37,19 +33,26 @@ header nav ul li {
 
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: font-size 0.4s;
+
+    font-size: 0;
 }
 
-header nav ul li a{
+header nav ul li:hover {
+    font-size: 1.2rem;
+}
+
+header nav ul li a {
     text-decoration: none;
     color: #2B2B2D;
-    font-weight: 400;
     font-size: 20px;
-    cursor: pointer;
 
     transition: opacity 0.4s;
 }
 
-header nav ul li a:hover{
+header nav ul li a:hover {
     opacity: 0.6;
 }
 
@@ -60,18 +63,6 @@ header nav ul li a:hover{
 
     header .header_logo_container {
         justify-content: space-between;
-    }
-
-    header svg {
-        display: flex;
-        cursor: pointer;
-        color: #2B2B2D;
-
-        transition: opacity 0.4s;
-    }
-
-    header svg:hover {
-        opacity: 0.6;
     }
 
     header nav ul {

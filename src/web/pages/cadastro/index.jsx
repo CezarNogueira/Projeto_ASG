@@ -134,7 +134,7 @@ function Cadastro() {
 
                         <div className="input-box">
                             <label htmlFor="cep_morador">CEP</label>
-                            <input type="text" name="cep_morador" value={formDados.cep_morador} onChange={handleChange} pattern='[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}' required/>
+                            <input type="text" name="cep_morador" value={formDados.cep_morador} onChange={handleChange} maxLength='9' required/>
                         </div>
                     </div>
 

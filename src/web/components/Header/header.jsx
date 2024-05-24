@@ -1,36 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './header_module.css';
-import { RxHamburgerMenu } from "react-icons/rx";
+import { FaHouse } from "react-icons/fa6";
+import { PiSignInBold } from "react-icons/pi";
+import { FaEye } from "react-icons/fa";
+import { GrDocumentUpdate } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 
 function Header ({ setCurrentPage }) {
-    const [menuOpen, setMenuOpen] = useState(true);
 
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 764) {
-                setMenuOpen(true)
-            }
-        })
-    }, [])
     return (
         <header className='header'>
             <div className="header_logo_container">
                 <h2 className='header_logo'>Alto Santo da Glória</h2>
-                <RxHamburgerMenu size={24} onClick= {() => {
-                    setMenuOpen(!menuOpen);
-                }}/>
             </div>
-            {menuOpen && (
                 <nav>
                     <ul>
-                        <li><a onClick={() => setCurrentPage('home')}>Home</a></li>
-                        <li><a onClick={() => setCurrentPage('create')}>Cadastrar</a></li>
-                        <li><a onClick={() => setCurrentPage('read')}>Exibir</a></li>
-                        <li><a onClick={() => setCurrentPage('update')}>Atualizar</a></li>
-                        <li><a onClick={() => setCurrentPage('delete')}>Deletar</a></li>
+                        <li><a onClick={() => setCurrentPage('home')}><FaHouse size={28}/></a><p>Home</p></li>
+                        <li><a onClick={() => setCurrentPage('create')}><PiSignInBold size={28}/></a><p>Cadastrar</p></li>
+                        <li><a onClick={() => setCurrentPage('read')}><FaEye size={28}/></a><p>Exibir</p></li>
+                        <li><a onClick={() => setCurrentPage('update')}><GrDocumentUpdate size={28}/></a><p>Atualizar</p></li>
+                        <li><a onClick={() => setCurrentPage('delete')}><MdDelete size={28}/></a><p>Deletar</p></li>
                     </ul>
                 </nav>
-            )}
         </header>
     );
 }
