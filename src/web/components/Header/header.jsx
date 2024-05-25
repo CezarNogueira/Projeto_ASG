@@ -15,11 +15,11 @@ function Header ({ setCurrentPage }) {
             </div>
                 <nav>
                     <ul>
-                        <li><a onClick={() => setCurrentPage('home')}><FaHouse size={28}/></a><p>Home</p></li>
-                        <li><a onClick={() => setCurrentPage('create')}><PiSignInBold size={28}/></a><p>Cadastrar</p></li>
-                        <li><a onClick={() => setCurrentPage('read')}><FaEye size={28}/></a><p>Exibir</p></li>
-                        <li><a onClick={() => setCurrentPage('update')}><GrDocumentUpdate size={28}/></a><p>Atualizar</p></li>
-                        <li><a onClick={() => setCurrentPage('delete')}><MdDelete size={28}/></a><p>Deletar</p></li>
+                        <li onClick={() => setCurrentPage('home')}><a><FaHouse size={28}/></a><p>Home</p></li>
+                        <li onClick={() => setCurrentPage('create')}><a><PiSignInBold size={28}/></a><p>Cadastrar</p></li>
+                        <li onClick={() => setCurrentPage('read')}><a><FaEye size={28}/></a><p>Exibir</p></li>
+                        <li onClick={() => setCurrentPage('update')}><a><GrDocumentUpdate size={28}/></a><p>Atualizar</p></li>
+                        <li onClick={() => setCurrentPage('delete')}><a><MdDelete size={28}/></a><p>Deletar</p></li>
                     </ul>
                 </nav>
         </header>
